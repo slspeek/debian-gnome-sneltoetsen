@@ -10,6 +10,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Create build directory
         run: mkdir build
+      - name: list files in docker environment
+        uses: docker://leplusorg/latex
+        with:
+          args: ls -lR
       - name: pdflatex first run
         uses: docker://leplusorg/latex
         with:
