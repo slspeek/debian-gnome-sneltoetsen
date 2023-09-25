@@ -18,6 +18,8 @@ jobs:
         uses: docker://leplusorg/latex
         with:
           args: pdflatex -output-directory build sheet.tex
+        env:
+          TEXINPUTS: src
       - name: list files
         run: ls -lR build
       - name: Release generated pdf
