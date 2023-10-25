@@ -17,7 +17,7 @@ jobs:
       - name: pdflatex first run
         uses: docker://leplusorg/latex
         with:
-          args: pdflatex -output-directory build sheet.tex
+          args: pdflatex -output-directory build debian-gnome-sneltoetsen.tex
         env:
           TEXINPUTS: "src:"
       - name: list files
