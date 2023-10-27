@@ -1,6 +1,6 @@
 %% This file is encoded in utf-8
 %%
-\documentclass[12pt,landscape,english]{article}
+\documentclass[11pt,landscape,english]{article}
 \usepackage{babel}
 \usepackage{multicol}
 \usepackage{calc}
@@ -18,10 +18,10 @@
 \pdfinfo{
   /Title (Debian Bookworm GNOME sneltoetsen)
   /Creator (TeX)
-  /Producer (pdfTeX 1.40.0)
+  /Producer (pdfTeX 3.141592653-2.6-1.40.24)
   /Author (Steven Speek)
-  /Subject (Example)
-  /Keywords (pdflatex, latex,pdftex,tex)}
+  /Subject (Sneltoetsen Debian Bookworm)
+  /Keywords (sneltoetsen, Debian, GNOME)}
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
 % if using A4 paper. (This probably isn't strictly necessary.)
@@ -63,10 +63,6 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt plus 0.5ex}
 
-%My Environments
-%\newtheorem{example}[section]{Example}
-% -----------------------------------------------------------------------
-
 % Shortcut commands
 \newcommand{\acc}[1]{\texttt{#1}}
 
@@ -84,6 +80,7 @@
 
 \newcommand{\controldef}[2]{\sneltoetsrij{\control{#1}}{#2}}
 
+\newenvironment{sneltoetsen}{\begin{tabular}{@{}l@{\;}l@{}}}{\end{tabular}}
 
 \begin{document}
 \raggedright
@@ -106,28 +103,27 @@
 
 \section{Algemeen}
 
-\subsection{Widgets}
-\begin{tabular}{@{}l@{\;}l@{}}
+\begin{sneltoetsen}
 	\sneltoetsdef{SPATIEBALK}{Knop/item/optie activeren}
 	\sneltoetsdef{ALT+↓}{Dropdown lijst openen}
 	\sneltoetsdef{TAB}{Focus volgend widget}
 	\sneltoetsdef{SHIFT+TAB}{Focus vorig widget}
 	\sneltoetsdef{F10}{Menubalk activeren}
-	\sneltoetsdef{MENU}{Context menu openen}
-\end{tabular}
-
-\subsection{Veelvoorkomende functies}
-\begin{tabular}{@{}l@{\;}l@{}}
+	\dubbeledef{MENU}{SHIFT+F10}{Context menu openen}
+	\sneltoetsdef{ESC}{Menu/Popup sluiten, annuleren}
 	\controldef{C}{Kop\"{i}eren}
 	\controldef{X}{Knippen}
 	\controldef{V}{Plakken}
 	\controldef{F}{Zoeken}
-\end{tabular}
+	\controldef{-}{Uitzoomen}
+	\controldef{+}{Inzoomen}
+	\controldef{0}{Standaard grootte}
+\end{sneltoetsen}
 
 \section{GNOME}
 
 \subsection{Starters}
-\begin{tabular}{@{}l@{\;}l@{}}
+\begin{sneltoetsen}
 	\supertoetsdef{1}{Firefox}
 	\supertoetsdef{2}{Evolution (email)}
 	\supertoetsdef{3}{LibreOffice writer}
@@ -136,19 +132,109 @@
 	\supertoetsdef{F1}{Hulp openen}
 	\sneltoetsdef{CTRL+ALT+T}{Terminal}
 	\supertoetsdef{L}{Scherm vergrendelen}
-\end{tabular}
+	\supertoetsdef{I}{Instellingen}
+	\supertoetsdef{SHIFT+I}{Afstellingen}
+\end{sneltoetsen}
 
 \subsection{Wisselen}
-\begin{tabular}{@{}l@{\;}l@{}}
-	\dubbeledef{SUPER+TAB}{ALT+TAB}{Wisselen tussen open toepassingen}
-\end{tabular}
+\begin{sneltoetsen}
+	\sneltoetsdef{SUPER}{Activiteiten modus}
+	\supertoetsdef{A}{Applicatie modus}
+	\supertoetsdef{V}{Notificaties/Kalender}
+	\supertoetsdef{N}{Focus actieve notificatie}
+	\dubbeledef{SUPER+TAB}{ALT+TAB}{Wisselen tussen toepassingen}
+	\sneltoetsdef{ALT+F6}{Snel wisselen 1 toepassing}
+	\sneltoetsdef{ALT+\`{}}{Venster wisselen van 1 toepassing}
+	\sneltoetsdef{ALT+ESC}{Snel wisselen vensters 1 werkblad}
+	\supertoetsdef{F10}{Toepassings menu (bovenbalk)}
+	\sneltoetsdef{ALT+CTRL+TAB}{Bovenblak/Vensters}
+	\supertoetsdef{Home}{Eerste werkblad}
+	\supertoetsdef{PgDn}{Volgend werkblad}
+	\supertoetsdef{PgDn}{Meenemen naar volgend werkblad}
+	\supertoetsdef{PgUp}{Vorig werkblad}
+	\supertoetsdef{SHIFT+PgUp}{Meenemen naar vorig werkblad}
+	\supertoetsdef{End}{Laatste werkblad}
+	\supertoetsdef{L}{Scherm vergrendelen}
+	\sneltoetsdef{ALT+CTRL+DELETE}{Uitschakelen}
+\end{sneltoetsen}
 
 \subsection{Venster}
-\begin{tabular}{@{}l@{\;}l@{}}
+\begin{sneltoetsen}
+	\sneltoetsdef{ALT+SPATIEBALK}{Venstermenu}
+	\sneltoetsdef{ALT+F4}{Sluiten}
 	\supertoetsdef{↑}{Venster maximaliseren}
 	\supertoetsdef{↓}{Venster herstellen}
+	\supertoetsdef{←}{Linker helft scherm}
+	\supertoetsdef{→}{Rechter helft scherm}
 	\supertoetsdef{F10}{Maximaliseren/herstellen}
-\end{tabular}
+	\supertoetsdef{H}{Verbergen}
+\end{sneltoetsen}
+\subsubsection{Verplaatsen/Grootte}
+\begin{sneltoetsen}
+	\sneltoetsdef{ALT+F7}{Verplaats modus}
+	\sneltoetsdef{ALT+F8}{Grootte modus}
+	\sneltoetsdef{CTRL+←↑↓→}{Per pixel}
+	\sneltoetsdef{←↑↓→}{Verplaatsen}
+	\sneltoetsdef{SHIFT+←↑↓→}{Grote stap/naar de rand}
+	\sneltoetsdef{ENTER}{Bevestigen}
+	\sneltoetsdef{ESC}{Annuleren}
+\end{sneltoetsen}
+
+\subsection{Schermafdrukken}
+\begin{sneltoetsen}
+	\sneltoetsdef{ALT+PrintScreen}{Schermafdruk actieve venster}
+	\sneltoetsdef{PrintScreen}{Schermafdruk (interactief)}
+	\sneltoetsdef{ALT+CTRL+SHIFT+R}{Screencast opnemen}
+\end{sneltoetsen}
+
+\section{Toepassingen}
+\subsection{Firefox}
+\begin{sneltoetsen}
+	\controldef{T}{Nieuw tabblad}
+	\controldef{W}{Tabblad sluiten}
+	\controldef{TAB}{Tabblad wisselen}
+	\controldef{L}{Focus naar adresbalk}
+	\controldef{D}{Bladwijzer maken}
+	\controldef{SHIFT+O}{Bladwijzers beheren}
+	\controldef{SHIFT+B}{Bladwijzerbalk tonen/verbergen}
+	\controldef{N}{Nieuw venster}
+	\controldef{Q}{Afsluiten (alle vensters)}
+	\controldef{Click}{Open link in nieuw tabblad}
+	\controldef{SHIFT+Click}{Ga naar link in nieuw tabblad}
+\end{sneltoetsen}
+
+\subsubsection{Zoeken met zoekmachine}
+\begin{sneltoetsen}
+	\controldef{K}{Zoeken met zoekmachine}
+	\sneltoetsdef{CTRL+↑↓}{Zoekmachine selecteren}
+	\sneltoetsdef{ALT+↑↓}{Zoekmachine selecteren met invoer}
+\end{sneltoetsen}
+
+\subsection{Bestandsbeheerder}
+\begin{sneltoetsen}
+	\controldef{1}{Lijstweergave}
+	\controldef{2}{Rasterweergave}
+	\controldef{H}{Verborgen bestanden}
+	\controldef{SHIFT+N}{Nieuwe map}
+	\controldef{N}{Nieuw venster}
+	\controldef{W}{Venster sluiten}
+	\sneltoetsdef{ALT+↑}{Naar bovenliggende map}
+	\sneltoetsdef{DELETE}{Naar prullenbak verplaatsen}
+	\sneltoetsdef{ALT+ENTER}{Eigenschappen}
+	\sneltoetsdef{F1}{Hulp}
+	\controldef{?}{Sneltoetsen tonen}
+\end{sneltoetsen}
+
+\section{Speciale tekens}
+\begin{sneltoetsen}
+	\sneltoetsdef{SUPER sym ENTER}{Tekens en symbolen}
+	\dubbeledef{COMPOSE = c}{SUPER euro sign}{€}
+	\dubbeledef{COMPOSE \'{} e}{SUPER e acute}{\'{e}}
+	\dubbeledef{COMPOSE \`{} e}{SUPER e grave}{\`{e}}
+	\dubbeledef{COMPOSE \"{} e}{SUPER e diaeresis}{\"{e}}
+	\dubbeledef{COMPOSE - e}{SUPER e macron}{\={e}}
+	\dubbeledef{COMPOSE \^{} e}{SUPER e circumflex}{\^{e}}
+\end{sneltoetsen}
 
 \end{multicols}
 
