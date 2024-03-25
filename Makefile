@@ -12,6 +12,6 @@ prepare:
 	mkdir -p $(BUILD)
 
 generate_pdf: prepare
-	docker run -i --rm -t --workdir=/tmp --user="$(shell id -u):$(shell id -g)" --net=none -e TEXINPUTS=src: -v "$(shell pwd):/tmp" $(LATEX_IMAGE) pdflatex -output-directory $(BUILD) $(MAIN_NAME).tex
+	docker run --rm -t --workdir=/tmp --user="$(shell id -u):$(shell id -g)" --net=none -e TEXINPUTS=src: -v "$(shell pwd):/tmp" $(LATEX_IMAGE) pdflatex -output-directory $(BUILD) $(MAIN_NAME).tex
 
 
