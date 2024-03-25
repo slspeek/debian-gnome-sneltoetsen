@@ -8,20 +8,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Create build directory
-        run: mkdir build
-      - name: list files in docker environment
-        uses: docker://leplusorg/latex
-        with:
-          args: ls -lR
-      - name: pdflatex first run
-        uses: docker://leplusorg/latex
-        with:
-          args: pdflatex -output-directory build debian-gnome-sneltoetsen.tex
-        env:
-          TEXINPUTS: "src:"
-      - name: list files
-        run: ls -lR build
+      - name: Generate pdf
+        run: make generate_pdf
       - name: Release generated pdf
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
