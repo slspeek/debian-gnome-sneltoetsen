@@ -1,6 +1,6 @@
 BUILD=build
 MAIN_NAME=debian-gnome-sneltoetsen
-LATEX_IMAGE=leplusorg/latex
+LATEX_IMAGE=leplusorg/latex:sha-4a17317
 
 view: generate_pdf
 	evince $(BUILD)/$(MAIN_NAME).pdf
