@@ -20,7 +20,7 @@
   /Creator (TeX)
   /Producer (pdfTeX 3.141592653-2.6-1.40.24)
   /Author (Steven Speek)
-  /Subject (Sneltoetsen Debian Bookworm)
+  /Subject (Sneltoetsen Debian Trixie)
   /Keywords (sneltoetsen, Debian, GNOME)}
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
@@ -70,6 +70,10 @@
 
 \newcommand{\control}[1]{\acc{CTRL+#1}}
 
+\newcommand{\sterretje}[0]{$^*$}
+
+\newcommand{\dubbelsterretje}[0]{$^{**}$}
+
 \newcommand{\sneltoetsrij}[2]{#1 & #2 \\}
 
 \newcommand{\supertoetsdef}[2]{\sneltoetsrij{\super{#1}}{#2}}
@@ -96,11 +100,12 @@
 \setlength{\columnsep}{2pt}
 {
 % title
-\large{Debian Bookworm \linebreak GNOME sneltoetsen} \linebreak
+\large{GNOME 48.4 sneltoetsen \linebreak Debian Trixie} \linebreak
 \normalsize Steven Speek\linebreak
 \footnotesize \url{http://github.com/slspeek/debian-gnome-sneltoetsen}
 \rule{\columnwidth}{0.11pt}
 }
+
 \subsection{Algemeen}
 \begin{sneltoetsen}
 	\sneltoetsdef{SPATIEBALK}{Knop/item/optie activeren}
@@ -128,41 +133,28 @@
 	\sneltoetsdef{F1}{Hulp}
 	\sneltoetsdef{CTRL+SHIFT+?}{Sneltoetsen}
 \end{sneltoetsen}
+
+\subsection{Schermafdrukken}
+\begin{sneltoetsen}
+	\sneltoetsdef{ALT+PrintScreen}{Schermafdruk actieve venster}
+	\sneltoetsdef{PrintScreen}{Schermafdruk (interactief)}
+	\sneltoetsdef{CTRL+ALT+SHIFT+R}{Screencast opnemen}
+\end{sneltoetsen}
+
 \subsection{Starters}
 \begin{sneltoetsen}
 	\supertoetsdef{1}{Firefox}
 	\supertoetsdef{2}{Evolution (email)}
-	\supertoetsdef{3}{LibreOffice writer}
-	\dubbeledef{SUPER+4}{SUPER+E}{Bestandsbeheerder}
-	\supertoetsdef{5}{Software}
-	\supertoetsdef{F1}{Hulp openen}
-	\sneltoetsdef{CTRL+ALT+T}{Terminal}
+	\dubbeledef{SUPER+3}{SUPER+E \sterretje}{Bestandsbeheerder}
+	\supertoetsdef{4}{Software}
+	\supertoetsdef{5}{Teksteditor}
+	\supertoetsdef{6}{Calculator}
+	\dubbeledef{\super{F1}}{\super{7}}{Hulp openen}
+	\sneltoetsdef{CTRL+ALT+T \sterretje}{Terminal}
 	\supertoetsdef{L}{Scherm vergrendelen}
-	\supertoetsdef{I}{Instellingen}
-	\sneltoetsdef{SHIFT+SUPER+I}{Afstellingen}
+	\supertoetsdef{I \sterretje}{Instellingen}
+	\sneltoetsdef{SHIFT+SUPER+I \sterretje}{Afstellingen}
 \end{sneltoetsen}
-
-\subsection{Wisselen}
-\begin{sneltoetsen}
-	\sneltoetsdef{SUPER}{Activiteiten modus}
-	\supertoetsdef{A}{Applicatie modus}
-	\supertoetsdef{V}{Notificaties/Kalender}
-	\supertoetsdef{N}{Focus actieve notificatie}
-	\dubbeledef{SUPER+TAB}{ALT+TAB}{Wisselen tussen toepassingen}
-	\sneltoetsdef{ALT+F6}{Snel wisselen 1 toepassing}
-	\sneltoetsdef{ALT+\`{}}{Venster wisselen 1 toepassing}
-	\sneltoetsdef{ALT+ESC}{Snel wisselen vensters 1 werkblad}
-	\supertoetsdef{F10}{Toepassings menu (bovenbalk)}
-	\sneltoetsdef{CTRL+ALT+TAB}{Bovenblak/Vensters}
-	\supertoetsdef{Home}{Eerste werkblad}
-	\supertoetsdef{PgDn}{Volgend werkblad}
-	\sneltoetsdef{SHIFT+SUPER+PgDn}{Venster mee volgend werkblad}
-	\supertoetsdef{PgUp}{Vorig werkblad}
-	\sneltoetsdef{SHIFT+SUPER+PgUp}{Venster mee vorig werkblad}
-	\supertoetsdef{End}{Laatste werkblad}
-	\supertoetsdef{L}{Scherm vergrendelen}
-	\sneltoetsdef{CTRL+ALT+DELETE}{Uitschakelen}
-\end{sneltoetsen} 
 
 \subsection{Venster}
 \begin{sneltoetsen}
@@ -186,19 +178,13 @@
 	\sneltoetsdef{ESC}{Annuleren}
 \end{sneltoetsen}
 
-\subsection{Schermafdrukken}
-\begin{sneltoetsen}
-	\sneltoetsdef{ALT+PrintScreen}{Schermafdruk actieve venster}
-	\sneltoetsdef{PrintScreen}{Schermafdruk (interactief)}
-	\sneltoetsdef{CTRL+ALT+SHIFT+R}{Screencast opnemen}
-\end{sneltoetsen}
-
 \subsection{Firefox}
 \begin{sneltoetsen}
 	\controldef{T}{Nieuw tabblad}
 	\controldef{W}{Tabblad sluiten}
 	\sneltoetsdef{CTRL+SHIFT+T}{Tabblad heropenen}
 	\controldef{TAB}{Tabblad wisselen}
+	\controldef{K}{Zoeken met zoekmachine}
 	\controldef{L}{Focus naar adresbalk}
 	\controldef{D}{Bladwijzer maken}
 	\controldef{SHIFT+O}{Bladwijzers beheren}
@@ -208,13 +194,6 @@
 	\controldef{Click}{Open link in nieuw tabblad}
 	\controldef{SHIFT+Click}{Ga naar link in nieuw tabblad}
 	\controldef{H}{Geschiedenies tonen/verbergen}
-\end{sneltoetsen}
-
-\subsubsection{Zoeken met zoekmachine}
-\begin{sneltoetsen}
-	\controldef{K}{Zoeken met zoekmachine}
-	\sneltoetsdef{CTRL+↑↓}{Zoekmachine selecteren}
-	\sneltoetsdef{ALT+↑↓}{Zoekmachine selecteren met invoer}
 \end{sneltoetsen}
 
 \subsection{Bestandsbeheerder}
@@ -230,16 +209,19 @@
 	\sneltoetsdef{ALT+ENTER}{Eigenschappen}
 \end{sneltoetsen}
 
-\subsection{Speciale tekens}
+\subsection{Speciale tekens \dubbelsterretje}
 \begin{sneltoetsen}
+	\sneltoetsdef{RightALT = c}{€}
+	\sneltoetsdef{RightALT \'{} e}{\'{e} (acute)}
+	\sneltoetsdef{RightALT \`{} e}{\`{e} (grave)}
+	\sneltoetsdef{RightALT \"{} e}{\"{e} (trema)}
+	\sneltoetsdef{RightALT - e}{\={e} (macron)}
+	\sneltoetsdef{RightALT \^{} e}{\^{e} (circumflex)}
 	\sneltoetsdef{SUPER sym ENTER}{Tekens en symbolen}
-	\dubbeledef{COMPOSE = c}{SUPER euro sign}{€}
-	\dubbeledef{COMPOSE \'{} e}{SUPER e acute}{\'{e}}
-	\dubbeledef{COMPOSE \`{} e}{SUPER e grave}{\`{e}}
-	\dubbeledef{COMPOSE \"{} e}{SUPER e diaeresis}{\"{e}}
-	\dubbeledef{COMPOSE - e}{SUPER e macron}{\={e}}
-	\dubbeledef{COMPOSE \^{} e}{SUPER e circumflex}{\^{e}}
 \end{sneltoetsen}
 
 \end{multicols}
+\sterretje Aanbevolen sneltoets die onder Debian niet standaard zo is ingesteld. 
+
+\dubbelsterretje Hier is aangenomen dat de samensteltoets op de rechter alt-toets is insteld.
 \end{document}
